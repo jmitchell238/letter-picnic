@@ -1,10 +1,8 @@
 # Letter Picnic
 
-Find the letter on a cozy picnic blanket — **Find B!** Spoken prompts, munch cheers, and soft hints. ABC fun for ages **4–6**.
+Find the letter the game asks for ("Find B!") among the plates on a picnic blanket. An alphabet game for ages 4–6.
 
-**Play:** https://jmitchell238.github.io/letter-picnic/
-
-Part of [Arcade Hub](https://jmitchell238.github.io/arcade-hub/).
+Play at https://jmitchell238.github.io/letter-picnic/. It's one of the games in [Arcade Hub](https://jmitchell238.github.io/arcade-hub/).
 
 ## Modes
 
@@ -17,17 +15,24 @@ Part of [Arcade Hub](https://jmitchell238.github.io/arcade-hub/).
 
 ## Features
 
-- Gingham picnic blanket with big letter plates
-- Prompt chip + optional spoken “Find B!” (device speech synthesis)
-- Correct tap → munch + confetti celebration
-- Wrong tap → soft shake + glow on the right letter (no lives)
-- Sound mute + reduced motion
-- Offline PWA after first visit
-- Zero fail screens
+- Big letter plates on a gingham blanket
+- The letter to find is shown on screen and can also be spoken, using the device's built-in speech
+- A correct tap gets a munching sound and confetti
+- A wrong tap gives a small shake and highlights the right letter. There are no lives.
+- Mute and Calm motion settings
+- Installable PWA that works offline after the first visit
 
-## Stack
+There are no lives, ads, accounts or fail screens.
 
-Static HTML / CSS / Canvas. No build step.
+## Running locally
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open http://localhost:8080. The service worker needs `localhost` or HTTPS.
+
+Plain HTML, CSS and canvas with no build step.
 
 ## Tests
 
@@ -35,22 +40,10 @@ Static HTML / CSS / Canvas. No build step.
 node tests/run.mjs
 ```
 
-VM-loaded unit tests cover letter range, round picks, hit testing, play flow (correct/wrong/complete), modes, save, and PWA shell checks.
-
 ## Versioning
 
-`GAME_VERSION` in `js/config.js` ↔ `CACHE` in `sw.js`.
-
-## Local preview
-
-```bash
-python3 -m http.server 8080
-```
-
-## Parents
-
-No lives, ads, accounts, or fail screens. Educational without feeling like homework.
+When you bump `GAME_VERSION` in `js/config.js`, set `CACHE` in `sw.js` to `'letter-picnic-' + GAME_VERSION`.
 
 ## License
 
-Personal project for family Arcade Hub.
+Personal project for the family.
