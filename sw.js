@@ -1,5 +1,5 @@
 // Letter Picnic — bump with GAME_VERSION in js/config.js
-const CACHE = 'letter-picnic-1.0.000';
+const CACHE = 'letter-picnic-1.0.001';
 
 const ASSETS = [
   './',
